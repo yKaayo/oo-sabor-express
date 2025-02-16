@@ -32,7 +32,7 @@ class Restaurant:
 
     @property
     def mean_rating(self):
-        return str(round(sum(rating._rate for rating in self._rating) / len(self._rating), 1)) if self._rating else 0
+        return str(round(sum(rating._rate for rating in self._rating) / len(self._rating))) if self._rating else '-'
 
     
 # sushi_do_mazuka.change_status()
