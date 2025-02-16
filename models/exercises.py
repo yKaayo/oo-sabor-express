@@ -64,35 +64,31 @@ class BankAccount:
 
 # ----------
 
-class Restaurant:
-    restaurants = []
-    
-    def __init__(self, name, category):
-        self._name = name.lower()
-        self._category = category.lower()
-        self._active = False
-        Restaurant.restaurants.append(self)
-        
-    def __str__(self):
-        return f'{self._name}, {self._category}'
-    
-    @classmethod
-    def show_restaurant(cls):
-        print(f'{'Name'.ljust(30)} | {'Category'.ljust(30)} | Status')
-        for restaurant in cls.restaurants:
-            print(f'{restaurant._name.ljust(30)} | {restaurant._category.ljust(30)} | {restaurant._active}')
-            
-    @property
-    def active(self):
-        return '1' if self._active else '0'
-    
-    def change_status(self):
-        self._active = not self._active
-    
-# pizza_do_ze = Restaurant('Pizza do Ze', 'Pizzaria')
-# sushi_do_mazuka = Restaurant('Sushi do Mazuka', 'Sushi')
+class Book:
+    books = []
 
-# sushi_do_mazuka.change_status()
-# Restaurant.show_restaurant()
+    def __init__(self, title, author, release_publication):
+        self._title = title
+        self._author = author
+        self._release_publication = release_publication
+        self._available = True
+        Book.books.append(self)
+
+    def __str__(self):
+        return f'{self._title.ljust(20)} | {self._author.ljust(20)} | {self._release_publication}'
+    
+    @property
+    def set_available(self):
+        self._available = not self._available
+        print(self._available)
+        return self._available
+
+book1 = Book('Micro-Hábitos', 'B. J. Fogg', 2020)
+# book1.set_available
+
+book2 = Book('A Única Coisa', 'Gary Keller', 2021)
+
+# print(book1)
+# print(book2)
 
 # ----------
